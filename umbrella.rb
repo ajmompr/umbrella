@@ -82,8 +82,8 @@ puts "Next hour: " + next_hour
 
 #pp data_array[1..13]
 
-precip_array = []
+# precip_array = []
 
-data_array[1..12].each do |index_hash|
-  precip_array.push(index_hash.fetch("precipProbability"))
-end
+# data_array[1..12].each do |index_hash|
+#   precip_array.push(index_hash.fetch("precipProbability"))
+# end
