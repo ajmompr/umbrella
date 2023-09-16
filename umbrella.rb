@@ -19,5 +19,21 @@ parsed_response = JSON.parse(raw_response)
 #pp parsed_response
 
 #Create hashes to locate the location latitude and longitude
-results_hash = parsed_response.fetch("results")
+results_array = parsed_response.fetch("results")
+#pp results_array
+
+results_hash = results_array.at(0)
 #pp results_hash
+#pp results_hash.keys
+
+geometry_hash = results_hash.fetch("geometry")
+#pp geometry_hash
+
+location_hash = geometry_hash.fetch("location")
+#pp location_hash
+
+user_latitude = location_hash.fetch("lat")
+pp user_latitude
+
+user_longitude = location_hash.fetch("lng")
+pp user_longitude
