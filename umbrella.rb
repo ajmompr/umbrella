@@ -56,4 +56,6 @@ currently_hash = parsed_response_pir.fetch("currently")
 #pp currently_hash
 
 user_temp = currently_hash.fetch("temperature")
-pp user_temp
+
+current_temp_statement = "It is currently #{user_temp}" + "\u{00B0}" + "F."
+puts current_temp_statement
