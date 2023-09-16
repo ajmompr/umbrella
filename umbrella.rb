@@ -4,7 +4,7 @@ require "json"
 #Get user location
 puts "Where are you?"
 location = gets.chomp
-pp "Checking the weather at #{location}..."
+puts "Checking the weather at #{location}..."
 
 
 # Assemble google geocode API URL
@@ -40,7 +40,7 @@ user_longitude = location_hash.fetch("lng")
 
 #Display your coordinates print stament
 user_coord = "Your coordinates are " + user_latitude.to_s + ", " + user_longitude.to_s
-pp user_coord
+puts user_coord
 
 #Assemble pirate weather url
 pirate_weather_url = "https://api.pirateweather.net/forecast/" + ENV.fetch("PIRATE_WEATHER_KEY") + "/" + user_latitude.to_s + "," + user_longitude.to_s
