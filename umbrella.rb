@@ -11,15 +11,15 @@ puts "Checking the weather at #{location}..."
 google_maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + ENV.fetch("GMAPS_KEY")
 
 # Place GET request to the google geocode API URL
-raw_response = HTTP.get(google_maps_url)
+raw_response_google = HTTP.get(google_maps_url)
 
 # Parse the HTTP Response with JSON
-parsed_response = JSON.parse(raw_response)
+parsed_response_google = JSON.parse(raw_response_google)
 
 #pp parsed_response
 
 #Create hashes to locate the location latitude and longitude
-results_array = parsed_response.fetch("results")
+results_array = parsed_response_google.fetch("results")
 #pp results_array
 
 results_hash = results_array.at(0)
@@ -44,3 +44,7 @@ puts user_coord
 
 #Assemble pirate weather url
 pirate_weather_url = "https://api.pirateweather.net/forecast/" + ENV.fetch("PIRATE_WEATHER_KEY") + "/" + user_latitude.to_s + "," + user_longitude.to_s
+
+# Place GET request to pirate weather
+raw_response_pir = HTTP.get(pirate_weather_url)
+
