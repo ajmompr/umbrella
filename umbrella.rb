@@ -51,3 +51,9 @@ raw_response_pir = HTTP.get(pirate_weather_url)
 # Parse the HTTP response with JSON
 parsed_response_pir = JSON.parse(raw_response_pir)
 #pp parsed_response_pir
+
+currently_hash = parsed_response_pir.fetch("currently")
+#pp currently_hash
+
+user_temp = currently_hash.fetch("temperature")
+pp user_temp
