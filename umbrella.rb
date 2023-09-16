@@ -59,3 +59,14 @@ user_temp = currently_hash.fetch("temperature")
 
 current_temp_statement = "It is currently #{user_temp}" + "\u{00B0}" + "F."
 puts current_temp_statement
+
+hourly_hash = parsed_response_pir.fetch("hourly")
+#pp hourly_hash
+data_array = hourly_hash.fetch("data")
+#pp data_array
+
+data_hash = data_array.at(1)
+#pp data_hash
+
+next_hour = data_hash.fetch("summary")
+puts "Next hour: " + next_hour
