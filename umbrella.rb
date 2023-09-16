@@ -65,8 +65,25 @@ hourly_hash = parsed_response_pir.fetch("hourly")
 data_array = hourly_hash.fetch("data")
 #pp data_array
 
-data_hash = data_array.at(1)
+
+data_hash_next_hr = data_array.at(1)
 #pp data_hash
 
-next_hour = data_hash.fetch("summary")
+next_hour = data_hash_next_hr.fetch("summary")
 puts "Next hour: " + next_hour
+
+# data_array[1..13].each do |data_hash|
+#   if data_hash.fetch("precipProbability") > 10.0
+#     pp "You might want to carry an umbrella."
+#   else
+#     pp "You probably won't need an umbrella today."
+#   end  
+# end
+
+#pp data_array[1..13]
+
+precip_array = []
+
+data_array[1..12].each do |index_hash|
+  precip_array.push(index_hash.fetch("precipProbability"))
+end
