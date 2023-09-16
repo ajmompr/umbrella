@@ -48,3 +48,6 @@ pirate_weather_url = "https://api.pirateweather.net/forecast/" + ENV.fetch("PIRA
 # Place GET request to pirate weather
 raw_response_pir = HTTP.get(pirate_weather_url)
 
+# Parse the HTTP response with JSON
+parsed_response_pir = JSON.parse(raw_response_pir)
+#pp parsed_response_pir
