@@ -17,3 +17,7 @@ raw_response = HTTP.get(google_maps_url)
 parsed_response = JSON.parse(raw_response)
 
 #pp parsed_response
+
+#Create hashes to locate the location latitude and longitude
+results_hash = parsed_response.fetch("results")
+#pp results_hash
