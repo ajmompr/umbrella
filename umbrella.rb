@@ -38,3 +38,6 @@ user_latitude = location_hash.fetch("lat")
 # Store user's longitude based on location
 user_longitude = location_hash.fetch("lng")
 
+#Assemble pirate weather url
+pirate_weather_url = "https://api.pirateweather.net/forecast/" + ENV.fetch("PIRATE_WEATHER_KEY") + "/" + user_latitude.to_s + "," + user_longitude.to_s
+
