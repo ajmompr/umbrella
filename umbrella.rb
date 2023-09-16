@@ -32,8 +32,9 @@ geometry_hash = results_hash.fetch("geometry")
 location_hash = geometry_hash.fetch("location")
 #pp location_hash
 
+# Store user's latitude based on location
 user_latitude = location_hash.fetch("lat")
-pp user_latitude
 
+# Store user's longitude based on location
 user_longitude = location_hash.fetch("lng")
-pp user_longitude
+
